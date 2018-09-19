@@ -99,6 +99,10 @@ class Application(Frame):
         self.air_telem_frame["relief"] = "ridge"
         self.air_telem_frame.pack(side = "top")
 
+        self.air_telem_label = Label(self.air_telem_frame)
+        self.air_telem_label.pack(side = "top")
+        self.air_telem_label["text"] = "Air Telemetry"
+
         self.altitude_label = Label(self.air_telem_frame)
         self.altitude_label.pack(side = "top")
 	
@@ -109,9 +113,9 @@ class Application(Frame):
         self.ground_telem_frame["relief"] = "ridge"
         self.ground_telem_frame.pack(side = "top")
         
-        self.telem_label = Label(self.ground_telem_frame)
-        self.telem_label.pack(side = "top")
-        self.telem_label["text"] = "Telemetry"
+        self.ground_telem_label = Label(self.ground_telem_frame)
+        self.ground_telem_label.pack(side = "top")
+        self.ground_telem_label["text"] = "Ground Telemetry"
         
         self.connection_label = Label(self.ground_telem_frame)
         self.connection_label.pack(side = "top")
