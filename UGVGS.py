@@ -84,7 +84,7 @@ class Application(Frame):
         
         #Set Mission Parameters Button
         self.abort_button = Button(self)
-        self.abort_button["text"] = "DON'T PANIC!\nABORT"
+        self.abort_button["text"] = "ABORT"
         self.abort_button["command"] = self.abort
         self.abort_button["bg"] = "RED"
         self.abort_button.pack(side = "top")

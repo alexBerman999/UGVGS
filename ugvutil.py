@@ -1,3 +1,5 @@
+from mav_interface import mav_interface
+
 """
     Represents  mission parameters which include the mission bounds, drop point,
     and waypoint.
@@ -93,17 +95,21 @@ class Polygon():
 """
 class UGV():
     def __init__(self):
+        self.m_int = mav_interface("udpin:192.168.19.206:14550")
         self.connected = True
-        self.location = [38.14600, -76.42640]
-        self.speed = 5
-        self.altitude = 50
-        self.heading = 90
+        self.location = self.m_int.get_gps_loc()
+        self.speed = self.m_int.get_speed()
+        self.altitude = self.m_int.get_altitude()
+        self.heading = self.m_int.get_heading()
     
     """
         Updates UGV telemetry values
     """
     def update(self):
-        #todo: stuff
+        self.location = self.m_int.get_gps_loc()
+        self.speed = self.m_int.get_speed()
+        self.altitude = self.m_int.get_altitude()
+        self.heading = self.m_int.get_heading()
         print("updating")
     
     """
